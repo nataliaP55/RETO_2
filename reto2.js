@@ -1,19 +1,19 @@
-let numeroIngresado = "numero por def";
 const NUMERO_CASILLAS = 20;
 
+let numeroIngresado = "numero por def";
 
 for (let i = 1; i <= NUMERO_CASILLAS; i++) {
-    document.querySelector(`#veinte_casillas`).innerHTML += `
-    <option id = "${i}">Casilla ${i}  </option>
+    document.querySelector(`#mostrar_casillas`).innerHTML += `
+    <label for = "veinte_casillas">Casilla ${i}</label>
+    <input id="veinte_casillas" type="checkbox" name="casilla">  <Br>
 
     `;
 
 }
 
 function generar() {
-    numeroIngresado = document.querySelector('#casillas').value;
-    document.querySelector(`#op${numeroIngresado}`).innerHTML= `  
-    Opción ${numeroIngresado} 
-        
-        `;
+    numeroIngresado = Number(document.querySelector('#casilla').value);
+    document.querySelector(`#mostrar_casillas${numeroIngresado}`).checked=true
+    
 }
+
